@@ -1,0 +1,13 @@
+server:
+  port: 8088
+security:
+  basic:
+    enable: false
+spring:
+  datasource:
+    url:
+    username:
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update

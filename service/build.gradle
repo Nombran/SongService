@@ -1,0 +1,17 @@
+bootRun {
+    enabled = false
+}
+
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
+}
+
+dependencies {
+    implementation project(':repository')
+    api project(":interface")
+    implementation 'commons-io:commons-io:2.11.0'
+}
