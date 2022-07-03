@@ -5,7 +5,7 @@ security:
     enable: false
 spring:
   datasource:
-    url:
+    url: jdbc:postgresql://localhost:5432/songs
     username:
     password:
   jpa:

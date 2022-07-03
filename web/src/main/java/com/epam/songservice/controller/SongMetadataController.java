@@ -31,6 +31,12 @@ public class SongMetadataController {
 
     private final SongMetadataService service;
 
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public SongMetadataDto findSongMetadataByResourceId(@RequestParam("resourceId") Integer resourceId) {
+        return service.findSongMetadataByResourceId(resourceId);
+    }
+
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public SongMetadataDto findSongMetadata(@PathVariable("id") Integer id) {
@@ -45,8 +51,8 @@ public class SongMetadataController {
 
     @DeleteMapping
     @ResponseStatus(HttpStatus.OK)
-    public MultipleSongMetadataIdDto removeMetadata(@RequestParam("id") List<Integer> ids) {
-        return service.deleteSongMetadata(ids);
+    public MultipleSongMetadataIdDto removeMetadata(@RequestParam(name = "id", required = false) List<Integer> ids,
+                                                    @RequestParam(name = "resourceId", required = false) List<Integer> resourceIds) {
+        return service.deleteSongMetadata(ids, resourceIds);
     }
-
 }

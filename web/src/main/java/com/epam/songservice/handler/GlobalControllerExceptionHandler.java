@@ -2,6 +2,7 @@ package com.epam.songservice.handler;
 
 import com.epam.songservice.exception.SongMetadataNotExists;
 import com.epam.songservice.exception.SongMetadataNotFoundException;
+import com.epam.songservice.exception.SongMetadataServiceValidationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.FieldError;
